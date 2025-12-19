@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="styles.css" />
+    <title> Mongolian sign language-танилцуулга</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+        :root {
+            --primary-color: #728C69;
+            --secondary-color: #A5D56E;
+            --text-dark: #0e0d16;
+            --text-light: #767268;
+            --extra-light: #f7f8fd;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: "Montserrat", sans-serif;
+            white-space: nowrap;
+            color: var(--white);
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            display: flex;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            isolation: isolate;
+            width: 100%;
+            z-index: 9;
+        }
+
+        .nav__header {
+            padding: 1rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--primary-color);
+        }
+
+        .nav__logo a {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.5rem;
+        }
+
+        .nav__menu__btn {
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .nav__links {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            transition: transform 0.5s;
+            z-index: -1;
+        }
+
+        .nav__links.open {
+            transform: translateY(100%);
+        }
+
+        .nav__links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--white);
+            white-space: nowrap;
+        }
+
+        .nav__btns {
+            display: none;
+        }
+
+        .section__container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 5rem 1rem;
+        }
+
+        .section__header {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .section__description {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light);
+            line-height: 1.5rem;
+            text-align: center;
+        }
+
+        .header__container {
+            display: grid;
+            gap: 2rem;
+            overflow: hidden;
+        }
+
+        .header__image img {
+            max-width: 550px;
+            margin-inline: auto;
+        }
+
+        .header__content h1 {
+            margin-bottom: 1rem;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 4.75rem;
+            text-align: center;
+        }
+
+        .header__content h1 span {
+            color: var(--secondary-color);
+        }
+
+        .header__btns {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .header__btns a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .header__btns a span {
+            margin-right: 0.5rem;
+            width: 2.5rem;
+            aspect-ratio: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            border: 2px solid var(--text-dark);
+            border-radius: 100%;
+        }
+
+        .service {
+            background-color: var(--extra-light);
+        }
+
+        .service__container.section__header {
+            max-width: 750px;
+            margin-inline: auto;
+        }
+
+        .service__grid {
+            margin-block: 4rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .service__card {
+            padding: 1rem;
+            border-radius: 0.75rem;
+            background-color: var(--white);
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .service__card:hover {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service__card:nth-child(1):hover {
+            border-color: #c27aff;
+        }
+
+        .service__card:nth-child(2):hover {
+            border-color: #c27aff;
+        }
+
+        .service__card:nth-child(3):hover {
+            border-color: #c27aff;
+        }
+
+        .service__card:nth-child(4):hover {
+            border-color: #c27aff;
+        }
+
+        .service__card div {
+            margin-bottom: 1rem;
+            max-width: max-content;
+            padding: 5px 8px;
+            font-size: 1.75rem;
+            border-radius: 5px;
+        }
+
+        .service__card:nth-child(1) div {
+            color: #c27aff;
+            background-color: #f0fdfa;
+        }
+
+        .service__card:nth-child(2) div {
+            color: #c27aff;
+            background-color: #fff1f2;
+        }
+
+        .service__card:nth-child(3) div {
+            color: #c27aff;
+            background-color: #faf5ff;
+        }
+
+        .service__card:nth-child(4) div {
+            color: #c27aff;
+            background-color: #f0f9ff;
+        }
+
+        .service__card h4 {
+            margin-bottom: 0.5rem;
+            background: #e1e1e1;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            display: block;
+            border-radius: 12px;
+
+        }
+
+        .service__card .section__description {
+            text-align: left;
+        }
+
+        .service__btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about__container {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .about__image img {
+            max-width: 450px;
+            margin-inline: auto;
+        }
+
+        .about__content .section__header {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .about__list {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .about__list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .about__list li span {
+            max-width: max-content;
+            padding: 5px 8px;
+            font-size: 1.75rem;
+            border-radius: 5px;
+        }
+
+        .about__list li:nth-child(1) span {
+            color: #00d5be;
+            background-color: #f0fdfa;
+        }
+
+        .about__list li:nth-child(2) span {
+            color: #ff637e;
+            background-color: #fff1f2;
+        }
+
+        .about__list li:nth-child(3) span {
+            color: #c27aff;
+            background-color: #faf5ff;
+        }
+
+        .about__list h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .about__list .section__description {
+            text-align: left;
+        }
+
+        .portfolio {
+            background-color: var(--extra-light);
+            overflow: hidden;
+        }
+
+        .portfolio__header {
+            margin-bottom: 4rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .portfolio__image {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .portfolio__image__content {
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            transform: translateY(-50%);
+            padding-block: 1.5rem;
+            display: flex;
+            align-items: center;
+            background-color: var(--secondary-color);
+            border-radius: 0.25rem;
+            z-index: 1;
+        }
+
+        .portfolio__image__content div {
+            padding-inline: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .portfolio__image__content div:nth-child(1) {
+            border-right: 1px solid var(--extra-light);
+        }
+
+        .portfolio__image img {
+            border-radius: 0.5rem;
+        }
+
+        .portfolio__image__content h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .portfolio__image__content p {
+            font-size: 0.9rem;
+            color: var(--extra-light);
+        }
+
+        .portfolio__content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .portfolio__list {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .portfolio__list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .portfolio__list li span {
+            width: 5rem;
+            aspect-ratio: 1;
+            display: grid;
+            place-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            background-color: var(--secondary-color);
+            border-radius: 0.25rem;
+        }
+
+        .portfolio__list h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .portfolio__list .section__description {
+            text-align: left;
+        }
+
+        .feedback__container {
+            padding-bottom: 3rem;
+        }
+
+        .swiper {
+            padding-block: 4rem 2rem;
+            width: 100%;
+        }
+
+        .swiper-slide {
+            min-width: 375px;
+        }
+
+        .feedback__card {
+            padding: 1.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .feedback__card:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feedback__card .section__description {
+            text-align: left;
+        }
+
+        .feedback__details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback__user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feedback__user img {
+            max-width: 50px;
+            border-radius: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback__user h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .feedback__user h5 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .feedback__rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .feedback__rating span {
+            font-size: 1rem;
+            color: goldenrod;
+        }
+
+        .subscribe__content {
+            padding: 5rem 1rem;
+            border-radius: 1rem;
+            background-color: var(--secondary-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscribe__content .section__header {
+            margin-bottom: 2rem;
+            max-width: 750px;
+            margin-inline: auto;
+            color: var(--white);
+        }
+
+        .subscribe__content form {
+            width: 100%;
+            max-width: 600px;
+            margin-inline: auto;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+            background-color: var(--white);
+            border-radius: 0.5rem;
+        }
+
+        .subscribe__content input {
+            width: 100%;
+            padding-inline: 1rem;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .footer__container {
+            display: grid;
+            gap: 4rem 2rem;
+        }
+
+        .footer__logo {
+            margin-bottom: 2rem;
+        }
+
+        .footer__logo a {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .footer__logo a span {
+            color: var(--secondary-color);
+        }
+
+        .footer__col .section__description {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer__col h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .footer__socials {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer__socials a {
+            padding: 4px 6px;
+            font-size: 1.125rem;
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+            border-radius: 100%;
+        }
+
+        .footer__socials a:hover {
+            color: var(--white);
+            background-color: var(--secondary-color);
+        }
+
+        .footer__col h4 {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .footer__links {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .footer__links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .footer__links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer__links a span {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .footer__bar {
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .read {
+            display: inline-block;
+            padding: 6px 16px;
+            background: transparent;
+            color: var(--second-color);
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 8px;
+            transition: all .45s ease;
+            border-bottom: 2px solid black;
+
+
+
+        }
+        .card {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    transition: transform 0.4s ease;
+    border-radius: 1px solid black;
+  }
+
+  .card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .card-text {
+    padding: 1.2rem;
+  }
+
+  .card-text h3 {
+    margin-bottom: 0.5rem;
+    color: #166d66;
+    font-size: 1.1rem;
+  }
+
+  .card-text p {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+
+  /* 🟡 Animation Styles */
+  .hidden {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+        .about a {
+            color: var(--second-color);
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 40vh;
+            padding: 10px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-img img {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+       
+
+        .about-text {
+            max-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .about-text h2 span {
+            color: var(--main-color);
+        }
+
+        .about-text h4 {
+            font-size: 18px;
+            color: var(--main-color);
+            margin-bottom: 12px;
+        }
+
+        .about-text p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--second-color);
+        }
+
+        @media (width > 540px) {
+            .service__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer__container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (width > 768px) {
+            nav {
+                position: static;
+                padding: 1rem;
+                max-width: var(--max-width);
+                margin-inline: auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                border-bottom: 2px solid var(--extra-light);
+            }
+
+            .nav__header {
+                flex: 1;
+                padding: 0;
+                background-color: transparent;
+            }
+
+            .nav__logo a {
+                color: var(--text-dark);
+            }
+
+            .nav__logo a span {
+                color: var(--secondary-color);
+            }
+
+            .nav__menu__btn {
+                display: none;
+            }
+
+            .nav__links {
+                position: static;
+                width: fit-content;
+                padding: 0;
+                flex-direction: row;
+                background-color: transparent;
+                transform: none !important;
+            }
+
+            .nav__links a {
+                color: var(--text-light);
+            }
+
+            .nav__links a:hover {
+                color: var(--primary-color);
+            }
+
+            .nav__btns {
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .header__container {
+                padding-top: 2rem;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                gap: 0;
+            }
+
+            .header__image {
+                grid-area: 1/2/2/3;
+            }
+
+            .header__content :is(h1, .section__description) {
+                text-align: left;
+            }
+
+            .header__btns {
+                justify-content: flex-start;
+            }
+
+            .service__grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .about__container {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+            }
+
+            .portfolio__header {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio__header :is(.section__header, .section__description) {
+                text-align: left;
+            }
+
+            .portfolio__content {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+            }
+
+            .portfolio__image {
+                grid-area: 1/2/2/3;
+            }
+
+            .footer__container {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .footer__col:nth-child(1) {
+                grid-column: 1/3;
+                max-width: 350px;
+            }
+        }
+
+        @media (width > 1024px) {
+            .service__grid {
+                gap: 1.5rem;
+            }
+
+            .feedback__card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a href="#">Binderya</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+            <li><a href="#home">Нүүр</a></li>
+            <li><a href="#about">Гол санаа</a></li>
+            <li><a href="#portfolio">Агуулга</a></li>
+
+        </ul>
+
+    </nav>
+
+    <header class="section__container header__container" id="home">
+        <div class="header__image">
+            <img src="une1.JPG" alt="header" />
+        </div>
+        <div class="header__content">
+            <h1>See&<span>Sign</span></h1>
+            <h2>Бид бүгд ойлголцож чадна <br> . Хүндлэл, ойлголцол бид бүгдийнх.</h2>
+            <p class="section__description">
+                Хөгжлийн бэрхшээлтэй иргэн бүрийг ойлгож, харилцах нийгмийн гүүрийг бий болгох.
+
+
+
+            </p>
+            <div class="header__btns">
+                <button class="btn">Read more</button>
+                
+            </div>
+        </div>
+    </header>
+   <section class="about" id="about">
+    
+        <div class="about-img">
+          <img src="chart (1).png">
+        </div>
+        <div class="about-text">
+            <h2> Тоо судалгаа: Нийт</h2>
+          
+            <p>
+           Монгол Улсад албан ёсоор бүртгэлтэй хөгжлийн бэрхшээлтэй иргэдийн тоо: 110,000 гаруй.
+            </p>
+              
+
+
+         
+        </div>
+        <div class="about-img">
+            <img src="chart.png">
+        </div>
+        <div class="about-text">
+            
+          
+            <p>
+            
+            </p>
+              
+
+
+            
+        </div>
+    </section>
+    <section id="impact" style="padding: 3rem 1rem; background-color: #f0f9f7; font-family: sans-serif;">
+  <h2 style="text-align: center; color: #166d66; font-size: 2.2rem; margin-bottom: 2rem;">Асуудал</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+    <div class="card hidden">
+      <div class="card-img2" >
+         <img src="./asu5.JPG" alt="gg" style="object-fit: cover;" >
+      </div>
+      <div class="card-text">
+        <h3>1. Нийгмийн ойлголцлын дутагдал</h3>
+        <p>
+Монголд сонсголын бэрхшээлтэй хүмүүсийн хамгийн том бэрхшээл бол ойлголцол.
+Олон нийт дохионы хэлийг мэддэггүй, сурах хэрэгтэй гэдгийг мэддэг ч хаанаас, яаж сурахаа ойлгодоггүй.
+
+</p>
+      </div>
+    </div>
+
+    <div class="card hidden">
+      <div class="card-img2" >
+        <img src="./asu4.JPG" alt="gg" style="object-fit: cover;" >
+      </div>
+      <div class="card-text">
+        <h3>2. Нийтийн үйлчилгээний хүртээмжгүй байдал
+</h3>
+        <p>Төрийн байгууллага, эмнэлэг, сургууль гээд олон нийтийн үйлчилгээний газруудад:<br>
+
+Дохионы хэл мэддэг ажилтан ховор <br>
+
+Дохионы орчуулга зөвхөн зарим ТВ сувгаар л гардаг</p>
+      </div>
+    </div>
+
+    <div class="card hidden">
+      <div class="card-img2" >
+        <img src="./asu1.JPG" alt="gg" style="object-fit: cover;" >
+      </div>
+      <div class="card-text">
+        <h3>3. Эрхийн зөрчил ба ялгаварлалт</h3>
+        <p>Хөгжлийн бэрхшээлтэй хүмүүсийг "өөр" гэж харж, ойлгож чадахгүйгээс гадуурхах хандлага түгээмэл. Энэ нь:<br>
+
+            Ажил олдохгүй байх<br>
+
+               Боловсрол эзэмших боломжоор хязгаарлагдах<br>
+
+                Өөрийгөө илэрхийлэх боломжгүй болгох</p>
+      </div>
+    </div>
+
+    <div class="card hidden">
+      <div class="card-img2" >
+        <img src="./asu2.JPG" alt="gg" style="object-fit: cover;" >
+      </div>
+      <div class="card-text">
+        <h3>4. Олон нийт дохионы хэлийг мэддэггүй</h3>
+        <p>Ихэнх иргэд дохионы хэлний талаарх ойлголтгүй байдаг. <br>Ингэснээр сонсголын бэрхшээлтэй иргэдтэй харилцах боломжгүй болж, нийгэмд тэгш бус оролцоог бий болгодог.
+
+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="section__container about__container" id="about">
+        <div class="about__image">
+            <img src="une1.JPG" alt="about" />
+        </div>
+        <div class="about__content">
+            <h2 class="section__header">
+                Бид энэхүү вэб хуудсаараа дамжуулан:
+            </h2>
+            <ul class="about__list">
+                <li>
+                    <span><i class='bxr  bx-people-diversity  '  ></i> </span>
+                    <div>
+                        <h4>1. Ойлголцлын Гүүр Бид Болж Чадна</h4>
+                        <p class="section__description">
+                            ✧ Дохионы хэлний үндсэн мэдлэгийг олон нийтэд ойлгомжтой байдлаар хүргэнэ.<br>
+                            ✧ Ингэснээр эмнэлэг, сургууль, үйлчилгээний газар, гудамж гээд хаана ч ойлголцох суурь орчин
+                            бүрдэнэ.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span><i class='bxr  bx-education'  ></i>  </span>
+                    <div>
+                        <h4>2. Боловсролын хүртээмжийг нэмэгдүүлнэ</h4>
+                        <p class="section__description">
+                            ✧ Хөгжлийн бэрхшээлтэй хүүхдүүд, өсвөр үе, гэр бүлүүд хамтдаа суралцах нөхцөл бүрдэнэ.<br>
+✧ Ерөнхий боловсролын сургуулиуд, их дээд сургууль платформыг хэрэглээний түвшинд ашиглаж болно.<br>
+✧ Хүссэн хэн бүхэн хаанаас ч — хөдөө орон нутаг, хот гэлтгүй — суралцах боломжтой.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span><i class='bxr  bx-people-diversity'></i> </span>
+                    <div>
+                        <h4>.
+
+                            3. Нийгмийн харилцаанд бодит өөрчлөлт авчирна
+                        </h4>
+                        <p class="section__description">
+                           ✧ Хөгжлийн бэрхшээлтэй хүмүүсийг “өөр” биш, хамтдаа орших эрхтэй иргэн гэж хүлээж авах ухамсар нэмэгдэнэ.
+✧ Дохионы хэл мэддэг хүмүүсийн тоо нэмэгдэх тусам харилцаа, ойлголцол чөлөөтэй болно.
+
+
+                           
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+
+    
+
+    <section class="portfolio" id="portfolio">
+        <div class="section__container portfolio__container">
+            <div class="portfolio__header">
+                <h2 class="section__header">
+                    Уг вэб хуудас дотор маань: Ойлголцлын ертөнц таныг хүлээж байна.”
+                </h2>
+                <p class="section__description">
+                    Монгол Улсад дохионы хэлээр харилцагч иргэд олон бий. 
+                    Гэвч тэдэнтэй ойлголцох мэдлэг, боломж нь олон нийтэд хүрэлцээгүй хэвээр байна. 
+                    Дохионы хэл бол зөвхөн дохио зангаа бус, харин ойлголцлын үндэс, хүний эрхийн нэг хэсэг юм. 
+                    Энэхүү вэбсайт нь дохионы хэлийг түгээн дэлгэрүүлж, хүртээмжтэй, хүндэтгэлтэй нийгмийг
+                     цогцлоох зорилготой.
+
+
+
+                </p>
+            </div>
+            <div class="portfolio__content">
+                <div class="portfolio__image">
+                    <div class="portfolio__image__content">
+                        <div>
+                            <h4>1</h4>
+                            <p>мэдэхгүй <br>хэл биш</p>
+                        </div>
+                        <div>
+                            <h4>8000</h4>
+                            <p> Хүнийг  <br> ойлгох гүүр.</p>
+                        </div>
+                    </div>
+                    <img src="su1.JPG" alt="portfolio" />
+                </div>
+                <ul class="portfolio__list">
+                    <li>
+                        <span>01</span>
+                        <div>
+                            <h4>Дохионы хэлний анхан шатны сургалт, хичээлүүд</h4>
+                            <p class="section__description">
+                               Зураг, видео, жишээгээр баяжуулсан дохионы хэлний хичээлүүдийг хэн ч хялбар эхлэхээр хүргэнэ. Ойлголцлын гүүр болох суурь мэдлэгийг олгоно.
+
+
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>02</span>
+                        <div>
+                            <h4>Сэдвээр ангилсан хичээлүүд</h4>
+                            <p class="section__description">
+                                Дохионы хэлийг сэдвээр нь хялбар, сонирхолтой байдлаар суралцах боломжтой. Хичээл бүр зураг, видео, тайлбартай. 
+
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>03</span>
+                        <div>
+                            <h4> Дохионы хэлийг сэдвээр нь хялбар, сонирхолтой байдлаар суралцах боломжтой.  </h4>
+                            <p class="section__description">
+                                Хичээлийн дараа тухайн сэдэвтэй холбоотой интерактив тоглоом, асуулт хариултын хэсэгт орж мэдлэгээ бататгах боломжтой. Энэ нь суралцах үйл явцыг зугаатай болгохоос гадна ойлголтыг гүнзгийрүүлж, бодит амьдралд хэрэглээ болгоход тусална.
+
+
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#">See&<span>Sign</span></a>
+                </div>
+                <p class="section__description">
+                Бид бүгд ойлголцож чадна.   <br>  Хүндлэл, ойлголцол бид бүгдийнх.
+                </p>
+                <h3>Follow Us</h3>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul class="footer__links">
+                    <li><a href="#">Нүүр</a></li>
+                    <li><a href="#">Гол санаа</a></li>
+                    <li><a href="#">Агуулга</a></li>
+
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-phone-fill"></i></span> +976 80371087
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-mail-fill"></i></span> binderya517@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-map-pin-2-fill"></i></span> Mongolia ,Dornod aimag,Kherlen sum
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Энэ вэб сайтыг Мэдээлэл зүйн олимпиадын хүрээнд бүтээв. © 2025
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const navLinks = document.getElementById("nav-links");
+        const menuBtnIcon = menuBtn.querySelector("i");
+
+        menuBtn.addEventListener("click", (e) => {
+            navLinks.classList.toggle("open");
+
+            const isOpen = navLinks.classList.contains("open");
+            menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+        });
+
+        navLinks.addEventListener("click", (e) => {
+            navLinks.classList.remove("open");
+            menuBtnIcon.setAttribute("class", "ri-menu-line");
+        });
+
+        const scrollRevealOption = {
+            distance: "50px",
+            origin: "bottom",
+            duration: 1000,
+        };
+
+        ScrollReveal().reveal(".header__content h1", {
+            ...scrollRevealOption,
+        });
+        ScrollReveal().reveal(".header__content .section__description", {
+            ...scrollRevealOption,
+            delay: 500,
+        });
+        ScrollReveal().reveal(".header__btns", {
+            ...scrollRevealOption,
+            delay: 1000,
+        });
+
+        ScrollReveal().reveal(".service__card", {
+            ...scrollRevealOption,
+            interval: 500,
+        });
+        ScrollReveal().reveal(".service__btn", {
+            ...scrollRevealOption,
+            delay: 2000,
+        });
+
+        ScrollReveal().reveal(".about__container .section__header", {
+            ...scrollRevealOption,
+        });
+        ScrollReveal().reveal(".about__list li", {
+            ...scrollRevealOption,
+            delay: 500,
+            interval: 500,
+        });
+
+        ScrollReveal().reveal(".portfolio__container .section__header", {
+            ...scrollRevealOption,
+        });
+        ScrollReveal().reveal(".portfolio__container .section__description", {
+            ...scrollRevealOption,
+            delay: 500,
+        });
+        ScrollReveal().reveal(".portfolio__image", {
+            ...scrollRevealOption,
+            origin: "right",
+            delay: 1000,
+        });
+        ScrollReveal().reveal(".portfolio__list li", {
+            ...scrollRevealOption,
+            interval: 500,
+            delay: 1500,
+        });
+
+        const swiper = new Swiper(".swiper", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+        });
+
+        ScrollReveal().reveal(".subscribe__content .section__header", {
+            ...scrollRevealOption,
+        });
+        ScrollReveal().reveal(".subscribe__content form", {
+            ...scrollRevealOption,
+            delay: 500,
+        });
+        const hiddenCards = document.querySelectorAll('.card.hidden');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        setTimeout(() => {
+          element.classList.add('show');
+          element.classList.remove('hidden');
+        }, index * 200); // 200ms delay for staggered effect
+        observer.unobserve(element);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  hiddenCards.forEach(card => observer.observe(card));
+    </script>
+
+</body>
+
+</html>
